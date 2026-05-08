@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUMIÈRE — Haute Parfumerie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">LUMIÈRE <span>PARFUM</span></a>
+    <div class="nav-links">
+      <a href="#catalog">Коллекции</a>
+      <a href="#about">О нас</a>
+      <a href="#apply">Ритуал</a>
+      <a href="#">Ателье</a>
+    </div>
+    <div class="nav-actions">
+      <button class="icon-btn" aria-label="Поиск">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="icon-btn cart-btn" aria-label="Корзина">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count">0</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="hero-gradient"></div>
+  </div>
+  <div class="hero-particles" id="heroParticles"></div>
+
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-line"></span>
+        Новая коллекция 2025
+      </div>
+      <h1 class="hero-title">
+        Искусство<br>
+        <em>аромата</em><br>
+        <span class="hero-title-outline">присутствия</span>
+      </h1>
+      <p class="hero-desc">
+        Каждый флакон создан вручную мастерами Граса. 
+        Аромат — это не просто запах, это архитектура эмоций.
+      </p>
+      <div class="hero-ctas">
+        <a href="#catalog" class="btn-primary">Смотреть коллекцию</a>
+        <a href="#about" class="btn-ghost">Наш манифест →</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">800+</span>
+          <span class="stat-label">Ароматов</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">15</span>
+          <span class="stat-label">Лет мастерства</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">48</span>
+          <span class="stat-label">Стран</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="bottle-stage">
+        <div class="bottle-shadow"></div>
+        <div class="bottle-halo"></div>
+        <div class="bottle-wrap" id="heroBottle">
+          <svg class="bottle-svg" viewBox="0 0 220 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Cap -->
+            <rect x="88" y="8" width="44" height="20" rx="5" fill="#C9A86C"/>
+            <rect x="94" y="3" width="32" height="10" rx="3" fill="#E8C98A"/>
+            <rect x="96" y="5" width="8" height="10" fill="rgba(255,255,255,0.3)"/>
+            <!-- Neck -->
+            <rect x="96" y="28" width="28" height="40" rx="3" fill="#E8E0D0"/>
+            <rect x="100" y="28" width="6" height="40" fill="rgba(255,255,255,0.4)"/>
+            <rect x="96" y="62" width="28" height="4" fill="#D4C8B0"/>
+            <!-- Body -->
+            <path d="M54 84 C54 70, 96 68, 96 68 L124 68 C124 68, 166 70, 166 84" fill="#F0EBE0"/>
+            <rect x="50" y="84" width="120" height="262" rx="6" fill="#F5F0E8"/>
+            <!-- Glass highlights -->
+            <rect x="62" y="96" width="16" height="180" rx="8" fill="rgba(255,255,255,0.5)"/>
+            <rect x="66" y="100" width="6" height="80" rx="3" fill="rgba(255,255,255,0.6)"/>
+            <rect x="148" y="110" width="8" height="100" rx="4" fill="rgba(255,255,255,0.2)"/>
+            <!-- Label background -->
+            <rect x="64" y="148" width="92" height="140" rx="3" fill="rgba(245,240,232,0.95)" stroke="#C9A86C" stroke-width="0.8"/>
+            <!-- Label top line -->
+            <line x1="72" y1="164" x2="148" y2="164" stroke="#C9A86C" stroke-width="0.6" opacity="0.6"/>
+            <!-- Brand name -->
+            <text x="110" y="160" font-family="'Cormorant Garamond', serif" font-size="10" fill="#C9A86C" text-anchor="middle" letter-spacing="4">LUMIÈRE</text>
+            <!-- Product name -->
+            <text x="110" y="182" font-family="'Cormorant Garamond', serif" font-size="16" fill="#1A1410" text-anchor="middle" font-style="italic">Ombre Dorée</text>
+            <!-- Divider -->
+            <line x1="80" y1="190" x2="140" y2="190" stroke="#C9A86C" stroke-width="0.5" opacity="0.5"/>
+            <!-- Concentration -->
+            <text x="110" y="202" font-family="'Jost', sans-serif" font-size="7" fill="#8A7D6E" text-anchor="middle" letter-spacing="2">EAU DE PARFUM</text>
+            <!-- Notes label -->
+            <text x="110" y="220" font-family="'Jost', sans-serif" font-size="6.5" fill="#A09080" text-anchor="middle" letter-spacing="1">Notes</text>
+            <!-- Notes -->
+            <text x="110" y="234" font-family="'Cormorant Garamond', serif" font-size="8.5" fill="#6A5A4A" text-anchor="middle" letter-spacing="0.5" font-style="italic">Amber · Sandalwood · Oud</text>
+            <!-- Volume -->
+            <text x="110" y="270" font-family="'Jost', sans-serif" font-size="7" fill="#A09080" text-anchor="middle" letter-spacing="1.5">50 ml / 1.7 fl.oz</text>
+            <!-- Bottom shine -->
+            <rect x="50" y="332" width="120" height="14" rx="3" fill="rgba(0,0,0,0.04)"/>
+            <!-- Side gradient overlay -->
+            <rect x="50" y="84" width="120" height="262" rx="6" fill="url(#bottleGrad)" opacity="0.4"/>
+            <defs>
+              <linearGradient id="bottleGrad" x1="50" y1="0" x2="170" y2="0" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#C9A86C" stop-opacity="0.2"/>
+                <stop offset="35%" stop-color="white" stop-opacity="0.1"/>
+                <stop offset="100%" stop-color="#C9A86C" stop-opacity="0.15"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <!-- Floating notes -->
+        <div class="float-notes" id="floatNotes">
+          <span class="fn fn1">Amber</span>
+          <span class="fn fn2">Oud</span>
+          <span class="fn fn3">Sandalwood</span>
+          <span class="fn fn4">Musk</span>
+          <span class="fn fn5">Bergamot</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Прокрутите вниз</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span>Бесплатная доставка от 15 000 ₽</span><span class="tick-sep">✦</span>
+    <span>Подлинность гарантирована</span><span class="tick-sep">✦</span>
+    <span>Более 800 ароматов</span><span class="tick-sep">✦</span>
+    <span>Флаконы ручной работы</span><span class="tick-sep">✦</span>
+    <span>Консультация мастера</span><span class="tick-sep">✦</span>
+    <span>Возврат 30 дней</span><span class="tick-sep">✦</span>
+    <span>Бесплатная доставка от 15 000 ₽</span><span class="tick-sep">✦</span>
+    <span>Подлинность гарантирована</span><span class="tick-sep">✦</span>
+    <span>Более 800 ароматов</span><span class="tick-sep">✦</span>
+    <span>Флаконы ручной работы</span><span class="tick-sep">✦</span>
+    <span>Консультация мастера</span><span class="tick-sep">✦</span>
+    <span>Возврат 30 дней</span><span class="tick-sep">✦</span>
+  </div>
+</div>
+
+<!-- CATALOG -->
+<section class="catalog-section" id="catalog">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-eyebrow">Каталог</div>
+        <h2 class="section-title">Избранные ароматы</h2>
+      </div>
+      <div class="catalog-controls">
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all">Все</button>
+          <button class="filter-tab" data-filter="oriental">Восточные</button>
+          <button class="filter-tab" data-filter="floral">Цветочные</button>
+          <button class="filter-tab" data-filter="woody">Древесные</button>
+          <button class="filter-tab" data-filter="fresh">Свежие</button>
+        </div>
+        <div class="strip-nav">
+          <div class="strip-progress">
+            <div class="strip-fill" id="stripFill"></div>
+          </div>
+          <button class="nav-arrow" id="prevBtn" aria-label="Назад">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="nav-arrow" id="nextBtn" aria-label="Вперёд">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="catalog-viewport">
+      <div class="catalog-strip" id="catalogStrip">
+
+        <!-- Card 1 -->
+        <article class="pcard" data-category="oriental">
+          <div class="pcard-img" style="background: linear-gradient(145deg, #F5EDD8 0%, #E8D4A8 100%)">
+            <span class="pcard-badge badge-new">Новинка</span>
+            <button class="pcard-wish" aria-label="В избранное">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <div class="pcard-bottle-wrap">
+              <svg viewBox="0 0 100 170" fill="none" class="card-bottle-svg">
+                <rect x="42" y="6" width="16" height="12" rx="2.5" fill="#C9A86C"/>
+                <rect x="45" y="3" width="10" height="6" rx="1.5" fill="#E8C98A"/>
+                <rect x="44" y="18" width="12" height="20" rx="1.5" fill="#D4BA80"/>
+                <path d="M28 46C28 38,44 36,44 40L56 40C56 36,72 38,72 46" fill="#F0E8D0"/>
+                <rect x="25" y="46" width="50" height="110" rx="4" fill="#F5F0E4"/>
+                <rect x="32" y="56" width="8" height="70" rx="4" fill="rgba(255,255,255,0.6)"/>
+                <rect x="60" y="60" width="5" height="50" rx="2.5" fill="rgba(255,255,255,0.3)"/>
+                <rect x="31" y="80" width="38" height="52" rx="2" fill="rgba(245,238,220,0.9)" stroke="#C9A86C" stroke-width="0.5"/>
+                <text x="50" y="96" font-family="serif" font-size="5.5" fill="#C9A86C" text-anchor="middle" letter-spacing="2.5">LUMIÈRE</text>
+                <text x="50" y="108" font-family="serif" font-size="8" fill="#1A1410" text-anchor="middle" font-style="italic">Ambre Noir</text>
+                <line x1="36" y1="113" x2="64" y2="113" stroke="#C9A86C" stroke-width="0.4" opacity="0.5"/>
+                <text x="50" y="122" font-family="sans-serif" font-size="5" fill="#8A7D6E" text-anchor="middle" letter-spacing="1">EDP · 50ml</text>
+                <rect x="25" y="46" width="50" height="110" rx="4" fill="url(#cg1)" opacity="0.4"/>
+                <defs><linearGradient id="cg1" x1="25" y1="0" x2="75" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#C9A86C" stop-opacity="0.3"/><stop offset="50%" stop-color="white" stop-opacity="0.05"/><stop offset="100%" stop-color="#C9A86C" stop-opacity="0.2"/></linearGradient></defs>
+              </svg>
+            </div>
+            <div class="ingredients-wrap">
+              <span class="ingr" style="--x:20%;--y:30%;--d:0s">🍊</span>
+              <span class="ingr" style="--x:70%;--y:20%;--d:.1s">🌿</span>
+              <span class="ingr" style="--x:15%;--y:65%;--d:.2s">🌸</span>
+              <span class="ingr" style="--x:75%;--y:60%;--d:.05s">🪵</span>
+              <span class="ingr" style="--x:45%;--y:15%;--d:.15s">✨</span>
+              <span class="ingr" style="--x:55%;--y:75%;--d:.25s">🍋</span>
+            </div>
+          </div>
+          <div class="pcard-body">
+            <div class="pcard-house">Восточный · Древесный</div>
+            <h3 class="pcard-name">Ambre Noir</h3>
+            <p class="pcard-desc">Дикая амбра, сандал и тёплый уд — аромат ночи у костра в пустыне.</p>
+            <div class="pcard-notes">
+              <span class="note">Амбра</span><span class="note">Уд</span><span class="note">Сандал</span>
+            </div>
+            <div class="pcard-footer">
+              <span class="pcard-price">24 900 ₽</span>
+              <button class="btn-add">В корзину</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="pcard" data-category="floral">
+          <div class="pcard-img" style="background: linear-gradient(145deg, #F5E8EE 0%, #E8C4D4 100%)">
+            <span class="pcard-badge badge-exc">Эксклюзив</span>
+            <button class="pcard-wish" aria-label="В избранное">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <div class="pcard-bottle-wrap">
+              <svg viewBox="0 0 100 170" fill="none" class="card-bottle-svg">
+                <rect x="40" y="6" width="20" height="13" rx="3" fill="#B06090"/>
+                <rect x="44" y="2" width="12" height="7" rx="2" fill="#D080B0"/>
+                <rect x="44" y="19" width="12" height="22" rx="1.5" fill="#C07098"/>
+                <path d="M26 48C26 39,44 38,44 42L56 42C56 38,74 39,74 48" fill="#F0E0E8"/>
+                <rect x="23" y="48" width="54" height="110" rx="4" fill="#F8EFF4"/>
+                <rect x="30" y="58" width="8" height="70" rx="4" fill="rgba(255,255,255,0.55)"/>
+                <rect x="59" y="62" width="5" height="50" rx="2.5" fill="rgba(255,255,255,0.25)"/>
+                <rect x="29" y="82" width="42" height="52" rx="2" fill="rgba(248,238,244,0.92)" stroke="#D080B0" stroke-width="0.5"/>
+                <text x="50" y="98" font-family="serif" font-size="5.5" fill="#C07098" text-anchor="middle" letter-spacing="2.5">LUMIÈRE</text>
+                <text x="50" y="110" font-family="serif" font-size="8" fill="#1A1410" text-anchor="middle" font-style="italic">Rose Sauvage</text>
+                <line x1="35" y1="115" x2="65" y2="115" stroke="#D080B0" stroke-width="0.4" opacity="0.5"/>
+                <text x="50" y="124" font-family="sans-serif" font-size="5" fill="#8A7D6E" text-anchor="middle" letter-spacing="1">EDP · 75ml</text>
+                <rect x="23" y="48" width="54" height="110" rx="4" fill="url(#cg2)" opacity="0.4"/>
+                <defs><linearGradient id="cg2" x1="23" y1="0" x2="77" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#D080B0" stop-opacity="0.3"/><stop offset="50%" stop-color="white" stop-opacity="0.05"/><stop offset="100%" stop-color="#D080B0" stop-opacity="0.2"/></linearGradient></defs>
+              </svg>
+            </div>
+            <div class="ingredients-wrap">
+              <span class="ingr" style="--x:25%;--y:25%;--d:0s">🌹</span>
+              <span class="ingr" style="--x:68%;--y:18%;--d:.12s">🌸</span>
+              <span class="ingr" style="--x:18%;--y:62%;--d:.22s">🌺</span>
+              <span class="ingr" style="--x:72%;--y:65%;--d:.06s">🌷</span>
+              <span class="ingr" style="--x:48%;--y:18%;--d:.17s">🍃</span>
+              <span class="ingr" style="--x:55%;--y:72%;--d:.28s">✨</span>
+            </div>
+          </div>
+          <div class="pcard-body">
+            <div class="pcard-house">Цветочный · Пряный</div>
+            <h3 class="pcard-name">Rose Sauvage</h3>
+            <p class="pcard-desc">Турецкая роза, чёрный перец и мускус — дерзость в цветочном обличии.</p>
+            <div class="pcard-notes">
+              <span class="note">Роза</span><span class="note">Перец</span><span class="note">Мускус</span>
+            </div>
+            <div class="pcard-footer">
+              <span class="pcard-price">38 500 ₽</span>
+              <button class="btn-add">В корзину</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="pcard" data-category="woody">
+          <div class="pcard-img" style="background: linear-gradient(145deg, #E8F0E8 0%, #C4D8C0 100%)">
+            <span class="pcard-badge badge-lim">Лимитед</span>
+            <button class="pcard-wish" aria-label="В избранное">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <div class="pcard-bottle-wrap">
+              <svg viewBox="0 0 100 170" fill="none" class="card-bottle-svg">
+                <rect x="41" y="6" width="18" height="12" rx="2.5" fill="#4A8060"/>
+                <rect x="44" y="3" width="12" height="6" rx="1.5" fill="#6AAA80"/>
+                <rect x="44" y="18" width="12" height="20" rx="1.5" fill="#58907A"/>
+                <path d="M27 46C27 38,44 36,44 40L56 40C56 36,73 38,73 46" fill="#E0EDE0"/>
+                <rect x="24" y="46" width="52" height="112" rx="4" fill="#EDF5EA"/>
+                <rect x="31" y="56" width="8" height="72" rx="4" fill="rgba(255,255,255,0.55)"/>
+                <rect x="58" y="60" width="5" height="52" rx="2.5" fill="rgba(255,255,255,0.25)"/>
+                <rect x="30" y="80" width="40" height="52" rx="2" fill="rgba(238,246,236,0.92)" stroke="#6AAA80" stroke-width="0.5"/>
+                <text x="50" y="96" font-family="serif" font-size="5.5" fill="#4A8060" text-anchor="middle" letter-spacing="2.5">LUMIÈRE</text>
+                <text x="50" y="108" font-family="serif" font-size="8" fill="#1A1410" text-anchor="middle" font-style="italic">Forêt Verte</text>
+                <line x1="36" y1="113" x2="64" y2="113" stroke="#6AAA80" stroke-width="0.4" opacity="0.5"/>
+                <text x="50" y="122" font-family="sans-serif" font-size="5" fill="#8A7D6E" text-anchor="middle" letter-spacing="1">EDC · 100ml</text>
+                <rect x="24" y="46" width="52" height="112" rx="4" fill="url(#cg3)" opacity="0.4"/>
+                <defs><linearGradient id="cg3" x1="24" y1="0" x2="76" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#6AAA80" stop-opacity="0.3"/><stop offset="50%" stop-color="white" stop-opacity="0.05"/><stop offset="100%" stop-color="#6AAA80" stop-opacity="0.2"/></linearGradient></defs>
+              </svg>
+            </div>
+            <div class="ingredients-wrap">
+              <span class="ingr" style="--x:22%;--y:28%;--d:0s">🌲</span>
+              <span class="ingr" style="--x:70%;--y:22%;--d:.1s">🍃</span>
+              <span class="ingr" style="--x:16%;--y:64%;--d:.2s">🌿</span>
+              <span class="ingr" style="--x:74%;--y:62%;--d:.05s">🍀</span>
+              <span class="ingr" style="--x:46%;--y:16%;--d:.15s">🪴</span>
+              <span class="ingr" style="--x:52%;--y:74%;--d:.25s">💚</span>
+            </div>
+          </div>
+          <div class="pcard-body">
+            <div class="pcard-house">Древесный · Зелёный</div>
+            <h3 class="pcard-name">Forêt Verte</h3>
+            <p class="pcard-desc">Кедр, ветивер и влажный мох — утренний лес после дождя.</p>
+            <div class="pcard-notes">
+              <span class="note">Кедр</span><span class="note">Ветивер</span><span class="note">Мох</span>
+            </div>
+            <div class="pcard-footer">
+              <span class="pcard-price">19 200 ₽</span>
+              <button class="btn-add">В корзину</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="pcard" data-category="fresh">
+          <div class="pcard-img" style="background: linear-gradient(145deg, #E8EEF5 0%, #C0CCE0 100%)">
+            <button class="pcard-wish" aria-label="В избранное">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <div class="pcard-bottle-wrap">
+              <svg viewBox="0 0 100 170" fill="none" class="card-bottle-svg">
+                <rect x="41" y="6" width="18" height="12" rx="2.5" fill="#3A6880"/>
+                <rect x="44" y="3" width="12" height="6" rx="1.5" fill="#5A90A8"/>
+                <rect x="44" y="18" width="12" height="20" rx="1.5" fill="#4A7890"/>
+                <path d="M27 46C27 38,44 36,44 40L56 40C56 36,73 38,73 46" fill="#DDE8F0"/>
+                <rect x="24" y="46" width="52" height="112" rx="4" fill="#EDF3F8"/>
+                <rect x="31" y="56" width="8" height="72" rx="4" fill="rgba(255,255,255,0.55)"/>
+                <rect x="58" y="60" width="5" height="52" rx="2.5" fill="rgba(255,255,255,0.25)"/>
+                <rect x="30" y="80" width="40" height="52" rx="2" fill="rgba(236,244,250,0.92)" stroke="#5A90A8" stroke-width="0.5"/>
+                <text x="50" y="96" font-family="serif" font-size="5.5" fill="#3A6880" text-anchor="middle" letter-spacing="2.5">LUMIÈRE</text>
+                <text x="50" y="108" font-family="serif" font-size="8" fill="#1A1410" text-anchor="middle" font-style="italic">Mer Calme</text>
+                <line x1="36" y1="113" x2="64" y2="113" stroke="#5A90A8" stroke-width="0.4" opacity="0.5"/>
+                <text x="50" y="122" font-family="sans-serif" font-size="5" fill="#8A7D6E" text-anchor="middle" letter-spacing="1">EDT · 100ml</text>
+                <rect x="24" y="46" width="52" height="112" rx="4" fill="url(#cg4)" opacity="0.4"/>
+                <defs><linearGradient id="cg4" x1="24" y1="0" x2="76" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#5A90A8" stop-opacity="0.3"/><stop offset="50%" stop-color="white" stop-opacity="0.05"/><stop offset="100%" stop-color="#5A90A8" stop-opacity="0.2"/></linearGradient></defs>
+              </svg>
+            </div>
+            <div class="ingredients-wrap">
+              <span class="ingr" style="--x:24%;--y:26%;--d:0s">🌊</span>
+              <span class="ingr" style="--x:68%;--y:20%;--d:.1s">🫧</span>
+              <span class="ingr" style="--x:18%;--y:63%;--d:.2s">🍋</span>
+              <span class="ingr" style="--x:72%;--y:63%;--d:.06s">💧</span>
+              <span class="ingr" style="--x:47%;--y:17%;--d:.16s">🌬️</span>
+              <span class="ingr" style="--x:53%;--y:73%;--d:.26s">❄️</span>
+            </div>
+          </div>
+          <div class="pcard-body">
+            <div class="pcard-house">Свежий · Акватический</div>
+            <h3 class="pcard-name">Mer Calme</h3>
+            <p class="pcard-desc">Морская соль, бергамот и белая амбра — тишина открытого океана.</p>
+            <div class="pcard-notes">
+              <span class="note">Морская соль</span><span class="note">Бергамот</span><span class="note">Амбра</span>
+            </div>
+            <div class="pcard-footer">
+              <span class="pcard-price">17 400 ₽</span>
+              <button class="btn-add">В корзину</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="pcard" data-category="oriental">
+          <div class="pcard-img" style="background: linear-gradient(145deg, #F0EAD8 0%, #D8C09A 100%)">
+            <span class="pcard-badge badge-exc">Эксклюзив</span>
+            <button class="pcard-wish" aria-label="В избранное">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <div class="pcard-bottle-wrap">
+              <svg viewBox="0 0 100 170" fill="none" class="card-bottle-svg">
+                <rect x="40" y="5" width="20" height="14" rx="3" fill="#8A6030"/>
+                <rect x="44" y="2" width="12" height="7" rx="2" fill="#C9A86C"/>
+                <rect x="44" y="19" width="12" height="22" rx="1.5" fill="#A07840"/>
+                <path d="M25 48C25 38,44 37,44 42L56 42C56 37,75 38,75 48" fill="#EEE0C0"/>
+                <rect x="22" y="48" width="56" height="112" rx="4" fill="#F5EDDA"/>
+                <rect x="29" y="58" width="9" height="72" rx="4.5" fill="rgba(255,255,255,0.55)"/>
+                <rect x="60" y="62" width="5" height="52" rx="2.5" fill="rgba(255,255,255,0.25)"/>
+                <rect x="28" y="82" width="44" height="52" rx="2" fill="rgba(245,237,218,0.92)" stroke="#C9A86C" stroke-width="0.5"/>
+                <text x="50" y="98" font-family="serif" font-size="5.5" fill="#8A6030" text-anchor="middle" letter-spacing="2.5">LUMIÈRE</text>
+                <text x="50" y="110" font-family="serif" font-size="8" fill="#1A1410" text-anchor="middle" font-style="italic">Oud Royale</text>
+                <line x1="34" y1="115" x2="66" y2="115" stroke="#C9A86C" stroke-width="0.4" opacity="0.5"/>
+                <text x="50" y="124" font-family="sans-serif" font-size="5" fill="#8A7D6E" text-anchor="middle" letter-spacing="1">PARFUM · 30ml</text>
+                <rect x="22" y="48" width="56" height="112" rx="4" fill="url(#cg5)" opacity="0.4"/>
+                <defs><linearGradient id="cg5" x1="22" y1="0" x2="78" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#C9A86C" stop-opacity="0.35"/><stop offset="50%" stop-color="white" stop-opacity="0.05"/><stop offset="100%" stop-color="#C9A86C" stop-opacity="0.25"/></linearGradient></defs>
+              </svg>
+            </div>
+            <div class="ingredients-wrap">
+              <span class="ingr" style="--x:20%;--y:28%;--d:0s">🌙</span>
+              <span class="ingr" style="--x:70%;--y:22%;--d:.12s">🪵</span>
+              <span class="ingr" style="--x:16%;--y:65%;--d:.22s">🌹</span>
+              <span class="ingr" style="--x:74%;--y:64%;--d:.06s">✨</span>
+              <span class="ingr" style="--x:46%;--y:16%;--d:.17s">🫚</span>
+              <span class="ingr" style="--x:55%;--y:74%;--d:.28s">🌿</span>
+            </div>
+          </div>
+          <div class="pcard-body">
+            <div class="pcard-house">Восточный · Смолистый</div>
+            <h3 class="pcard-name">Oud Royale</h3>
+            <p class="pcard-desc">Уд высшего сорта, роза и смола бензоина — королевское присутствие.</p>
+            <div class="pcard-notes">
+              <span class="note">Уд</span><span class="note">Роза</span><span class="note">Смола</span>
+            </div>
+            <div class="pcard-footer">
+              <span class="pcard-price">62 000 ₽</span>
+              <button class="btn-add">В корзину</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="pcard" data-category="floral">
+          <div class="pcard-img" style="background: linear-gradient(145deg, #EEE8F4 0%, #D0B8E4 100%)">
+            <span class="pcard-badge badge-new">Новинка</span>
+            <button class="pcard-wish" aria-label="В избранное">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <div class="pcard-bottle-wrap">
+              <svg viewBox="0 0 100 170" fill="none" class="card-bottle-svg">
+                <rect x="41" y="6" width="18" height="12" rx="2.5" fill="#7060B0"/>
+                <rect x="44" y="3" width="12" height="6" rx="1.5" fill="#9880D0"/>
+                <rect x="44" y="18" width="12" height="20" rx="1.5" fill="#8070C0"/>
+                <path d="M27 46C27 38,44 36,44 40L56 40C56 36,73 38,73 46" fill="#EAE0F4"/>
+                <rect x="24" y="46" width="52" height="112" rx="4" fill="#F2EEF8"/>
+                <rect x="31" y="56" width="8" height="72" rx="4" fill="rgba(255,255,255,0.55)"/>
+                <rect x="58" y="60" width="5" height="52" rx="2.5" fill="rgba(255,255,255,0.25)"/>
+                <rect x="30" y="80" width="40" height="52" rx="2" fill="rgba(242,238,250,0.92)" stroke="#9880D0" stroke-width="0.5"/>
+                <text x="50" y="96" font-family="serif" font-size="5.5" fill="#7060B0" text-anchor="middle" letter-spacing="2.5">LUMIÈRE</text>
+                <text x="50" y="108" font-family="serif" font-size="8" fill="#1A1410" text-anchor="middle" font-style="italic">Iris Céleste</text>
+                <line x1="36" y1="113" x2="64" y2="113" stroke="#9880D0" stroke-width="0.4" opacity="0.5"/>
+                <text x="50" y="122" font-family="sans-serif" font-size="5" fill="#8A7D6E" text-anchor="middle" letter-spacing="1">EDP · 50ml</text>
+                <rect x="24" y="46" width="52" height="112" rx="4" fill="url(#cg6)" opacity="0.4"/>
+                <defs><linearGradient id="cg6" x1="24" y1="0" x2="76" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#9880D0" stop-opacity="0.3"/><stop offset="50%" stop-color="white" stop-opacity="0.05"/><stop offset="100%" stop-color="#9880D0" stop-opacity="0.2"/></linearGradient></defs>
+              </svg>
+            </div>
+            <div class="ingredients-wrap">
+              <span class="ingr" style="--x:22%;--y:27%;--d:0s">🌸</span>
+              <span class="ingr" style="--x:69%;--y:21%;--d:.1s">💜</span>
+              <span class="ingr" style="--x:17%;--y:63%;--d:.2s">🌷</span>
+              <span class="ingr" style="--x:73%;--y:63%;--d:.05s">✨</span>
+              <span class="ingr" style="--x:46%;--y:16%;--d:.15s">🪻</span>
+              <span class="ingr" style="--x:53%;--y:73%;--d:.25s">🌺</span>
+            </div>
+          </div>
+          <div class="pcard-body">
+            <div class="pcard-house">Цветочный · Пудровый</div>
+            <h3 class="pcard-name">Iris Céleste</h3>
+            <p class="pcard-desc">Ирис, фиалка и пачули — небесная пудра на тёплой коже.</p>
+            <div class="pcard-notes">
+              <span class="note">Ирис</span><span class="note">Фиалка</span><span class="note">Пачули</span>
+            </div>
+            <div class="pcard-footer">
+              <span class="pcard-price">31 700 ₽</span>
+              <button class="btn-add">В корзину</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLY SECTION -->
+<section class="apply-section" id="apply">
+  <div class="container">
+    <div class="apply-grid">
+      <div class="apply-left">
+        <div class="section-eyebrow">Ритуал нанесения</div>
+        <h2 class="section-title">Куда наносить <em>духи</em></h2>
+        <p class="apply-intro">Тепло тела раскрывает аромат. Наносите на пульсирующие точки — там, где кровь ближе к коже.</p>
+        <div class="apply-list">
+          <div class="apply-item" data-point="neck">
+            <div class="apply-dot-indicator"></div>
+            <div>
+              <strong>Шея и декольте</strong>
+              <span>Главная точка — аромат слышен при общении</span>
+            </div>
+          </div>
+          <div class="apply-item" data-point="ears">
+            <div class="apply-dot-indicator"></div>
+            <div>
+              <strong>За ушами</strong>
+              <span>Тепло раковины усиливает верхние ноты</span>
+            </div>
+          </div>
+          <div class="apply-item" data-point="wrists">
+            <div class="apply-dot-indicator"></div>
+            <div>
+              <strong>Запястья</strong>
+              <span>Не растирать — просто приложить флакон</span>
+            </div>
+          </div>
+          <div class="apply-item" data-point="elbows">
+            <div class="apply-dot-indicator"></div>
+            <div>
+              <strong>Сгибы локтей</strong>
+              <span>Шлейф активируется при движении</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="apply-right">
+        <div class="mannequin-wrap">
+          <svg class="mannequin" viewBox="0 0 300 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Head -->
+            <ellipse cx="150" cy="54" rx="38" ry="44" fill="#E8E0D8" stroke="#D4C8B8" stroke-width="1.5"/>
+            <!-- Neck -->
+            <rect x="136" y="94" width="28" height="36" rx="4" fill="#E8E0D8" stroke="#D4C8B8" stroke-width="1.5"/>
+            <!-- Shoulders -->
+            <path d="M60 136 C60 122,110 118,136 122 L164 122 C190 118,240 122,240 136 L246 200 C246 220,230 240,226 265 L200 320 L100 320 L74 265 C70 240,54 220,54 200 Z" fill="#E8E0D8" stroke="#D4C8B8" stroke-width="1.5"/>
+            <!-- Left arm -->
+            <path d="M60 144 C50 155,36 178,34 210 C32 234,36 255,40 272 L56 270 C52 252,48 232,50 210 C52 184,64 160,70 148 Z" fill="#E8E0D8" stroke="#D4C8B8" stroke-width="1.5"/>
+            <!-- Right arm -->
+            <path d="M240 144 C250 155,264 178,266 210 C268 234,264 255,260 272 L244 270 C248 252,252 232,250 210 C248 184,236 160,230 148 Z" fill="#E8E0D8" stroke="#D4C8B8" stroke-width="1.5"/>
+            <!-- Left forearm -->
+            <path d="M40 272 C38 292,40 308,44 320 L58 318 C54 306,52 290,56 270 Z" fill="#E2D8CE" stroke="#D4C8B8" stroke-width="1.5"/>
+            <!-- Right forearm -->
+            <path d="M260 272 C262 292,260 308,256 320 L242 318 C246 306,248 290,244 270 Z" fill="#E2D8CE" stroke="#D4C8B8" stroke-width="1.5"/>
+            <!-- Hips / legs separation -->
+            <path d="M100 320 L88 440 L110 442 L122 360 L150 358 L178 360 L190 442 L212 440 L200 320 Z" fill="#E8E0D8" stroke="#D4C8B8" stroke-width="1.5"/>
+            <!-- Left lower leg -->
+            <rect x="86" y="440" width="26" height="96" rx="4" fill="#E2D8CE" stroke="#D4C8B8" stroke-width="1.5"/>
+            <!-- Right lower leg -->
+            <rect x="188" y="440" width="26" height="96" rx="4" fill="#E2D8CE" stroke="#D4C8B8" stroke-width="1.5"/>
+            <!-- Feet -->
+            <ellipse cx="99" cy="540" rx="22" ry="10" fill="#DDD4CA" stroke="#D4C8B8" stroke-width="1.5"/>
+            <ellipse cx="201" cy="540" rx="22" ry="10" fill="#DDD4CA" stroke="#D4C8B8" stroke-width="1.5"/>
+
+            <!-- Application points -->
+            <!-- Neck -->
+            <circle cx="150" cy="118" r="9" fill="#D64040" opacity="0.9" class="app-pt" data-id="neck"/>
+            <circle cx="150" cy="118" r="9" fill="none" stroke="#D64040" stroke-width="1.5" class="pulse-ring"/>
+            <!-- Left ear -->
+            <circle cx="112" cy="66" r="7" fill="#D64040" opacity="0.9" class="app-pt" data-id="ears"/>
+            <circle cx="112" cy="66" r="7" fill="none" stroke="#D64040" stroke-width="1.5" class="pulse-ring" style="animation-delay:.4s"/>
+            <!-- Right ear -->
+            <circle cx="188" cy="66" r="7" fill="#D64040" opacity="0.9" class="app-pt" data-id="ears"/>
+            <circle cx="188" cy="66" r="7" fill="none" stroke="#D64040" stroke-width="1.5" class="pulse-ring" style="animation-delay:.7s"/>
+            <!-- Left wrist -->
+            <circle cx="42" cy="292" r="8" fill="#D64040" opacity="0.9" class="app-pt" data-id="wrists"/>
+            <circle cx="42" cy="292" r="8" fill="none" stroke="#D64040" stroke-width="1.5" class="pulse-ring" style="animation-delay:1s"/>
+            <!-- Right wrist -->
+            <circle cx="258" cy="292" r="8" fill="#D64040" opacity="0.9" class="app-pt" data-id="wrists"/>
+            <circle cx="258" cy="292" r="8" fill="none" stroke="#D64040" stroke-width="1.5" class="pulse-ring" style="animation-delay:1.3s"/>
+            <!-- Left elbow -->
+            <circle cx="44" cy="258" r="7" fill="#D64040" opacity="0.85" class="app-pt" data-id="elbows"/>
+            <circle cx="44" cy="258" r="7" fill="none" stroke="#D64040" stroke-width="1.5" class="pulse-ring" style="animation-delay:1.6s"/>
+            <!-- Right elbow -->
+            <circle cx="256" cy="258" r="7" fill="#D64040" opacity="0.85" class="app-pt" data-id="elbows"/>
+            <circle cx="256" cy="258" r="7" fill="none" stroke="#D64040" stroke-width="1.5" class="pulse-ring" style="animation-delay:1.9s"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">LUMIÈRE <span>PARFUM</span></div>
+        <p>Haute parfumerie с 2010 года. Прямые поставки из Граса. Каждый флакон — произведение искусства.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Коллекции</h4>
+        <a href="#">Восточные</a>
+        <a href="#">Цветочные</a>
+        <a href="#">Древесные</a>
+        <a href="#">Эксклюзив</a>
+      </div>
+      <div class="footer-col">
+        <h4>Сервис</h4>
+        <a href="#">Доставка</a>
+        <a href="#">Возврат</a>
+        <a href="#">Консультация</a>
+        <a href="#">О нас</a>
+      </div>
+      <div class="footer-col">
+        <h4>Контакты</h4>
+        <a href="#">info@lumiere.ru</a>
+        <a href="#">+7 495 000 00 00</a>
+        <a href="#">Москва, Кузнецкий мост, 7</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Lumière Parfum. Все права защищены.</span>
+      <span>Подлинность гарантирована ✦ Бесплатная доставка от 15 000 ₽</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

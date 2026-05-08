@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javokhir Attor — Luxury Perfumery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Ticker Strip -->
+    <div class="ticker-wrap" aria-hidden="true">
+        <div class="ticker">
+            <span>LUXURY PERFUMERY</span><span class="sep">✦</span>
+            <span>ARTISAN CRAFTED</span><span class="sep">✦</span>
+            <span>RARE BOTANICALS</span><span class="sep">✦</span>
+            <span>JAVOKHIR ATTOR</span><span class="sep">✦</span>
+            <span>SINCE 2024</span><span class="sep">✦</span>
+            <span>EXCLUSIVE COLLECTION</span><span class="sep">✦</span>
+            <span>FREE SHIPPING OVER $150</span><span class="sep">✦</span>
+            <span>LUXURY PERFUMERY</span><span class="sep">✦</span>
+            <span>ARTISAN CRAFTED</span><span class="sep">✦</span>
+            <span>RARE BOTANICALS</span><span class="sep">✦</span>
+            <span>JAVOKHIR ATTOR</span><span class="sep">✦</span>
+            <span>SINCE 2024</span><span class="sep">✦</span>
+            <span>EXCLUSIVE COLLECTION</span><span class="sep">✦</span>
+            <span>FREE SHIPPING OVER $150</span><span class="sep">✦</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-main">JAVOKHIR</span>
+                <span class="logo-sub">ATTOR</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#collection">Collection</a></li>
+                <li><a href="#ingredients">Ingredients</a></li>
+                <li><a href="#about">Story</a></li>
+                <li><a href="#application">Application</a></li>
+            </ul>
+            <a href="#collection" class="nav-cta">Shop Now</a>
+            <button class="nav-burger" id="navBurger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section — dark cinematic product showcase -->
+    <section class="hero" id="hero">
+        <canvas id="particleCanvas"></canvas>
+        <div class="hs-bg" id="hsBg"></div>
+
+        <div class="hs-inner">
+
+            <!-- Left: product name + brand + CTA -->
+            <div class="hs-info">
+                <p class="hs-eyebrow">The Art of Scent</p>
+                <h1 class="hs-name" id="hsName"></h1>
+                <p class="hs-brand" id="hsBrand"></p>
+                <p class="hs-desc" id="hsDesc"></p>
+                <a href="#collection" class="hs-cta">Explore Collection</a>
+            </div>
+
+            <!-- Centre: large bottle + orbiting ingredient illustrations -->
+            <div class="hs-stage">
+                <div class="hs-glow"        id="hsGlow"></div>
+                <div class="hs-orbit-wrap"  id="hsOrbitWrap"></div>
+                <div class="hs-bottle-wrap" id="hsBottleWrap"></div>
+            </div>
+
+            <!-- Right: fragrance notes + price + nav dots -->
+            <div class="hs-side">
+                <div class="hs-notes-wrap">
+                    <p class="hs-notes-label">Fragrance Notes</p>
+                    <div class="hs-note-list" id="hsNoteList"></div>
+                </div>
+                <div class="hs-price-block">
+                    <span class="hs-price" id="hsPrice"></span>
+                    <span class="hs-vol"   id="hsVol"></span>
+                </div>
+                <div class="hs-nav-dots" id="hsNavDots"></div>
+            </div>
+
+        </div>
+
+        <!-- Bottom: progress bar + buy button -->
+        <div class="hs-bottom">
+            <div class="hs-progress-bar"><div class="hs-progress-fill" id="hsProgressFill"></div></div>
+            <button class="hs-buy" id="hsBuy">В корзину</button>
+        </div>
+
+        <div class="scroll-indicator" aria-hidden="true">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- Features Strip -->
+    <div class="features-strip">
+        <div class="feature"><span class="feat-icon">✦</span><span class="feat-text">Free Shipping Over $150</span></div>
+        <div class="feat-div"></div>
+        <div class="feature"><span class="feat-icon">✦</span><span class="feat-text">Artisan Crafted</span></div>
+        <div class="feat-div"></div>
+        <div class="feature"><span class="feat-icon">✦</span><span class="feat-text">100% Natural Extracts</span></div>
+        <div class="feat-div"></div>
+        <div class="feature"><span class="feat-icon">✦</span><span class="feat-text">30-Day Returns</span></div>
+    </div>
+
+    <!-- Collection Section -->
+    <section class="collection section-pad" id="collection">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="eyebrow">Our Collection</p>
+                <h2 class="section-title">Signature <em>Fragrances</em></h2>
+                <p class="section-desc">Each bottle holds a universe of carefully selected notes, harmoniously blended by our master perfumers.</p>
+            </div>
+            <div class="filter-tabs reveal">
+                <button class="filter-tab active" data-filter="all">All</button>
+                <button class="filter-tab" data-filter="floral">Floral</button>
+                <button class="filter-tab" data-filter="oriental">Oriental</button>
+                <button class="filter-tab" data-filter="woody">Woody</button>
+                <button class="filter-tab" data-filter="fresh">Fresh</button>
+                <button class="filter-tab" data-filter="citrus">Citrus</button>
+            </div>
+            <div class="products-grid" id="productsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Ingredient Catalog Strip -->
+    <section class="catalog-section" id="ingredients">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="eyebrow">Sourced Worldwide</p>
+                <h2 class="section-title">The <em>Ingredients</em></h2>
+            </div>
+        </div>
+        <div class="catalog-viewport" id="catalogViewport">
+            <div class="catalog-track" id="catalogTrack">
+                <div class="cat-item reveal"><div class="cat-img" style="background:linear-gradient(135deg,#F5E6B8,#C9A84C)"><span>🌿</span></div><p class="cat-name">Oud Wood</p><p class="cat-origin">Middle East</p></div>
+                <div class="cat-item reveal" style="--reveal-delay:0.05s"><div class="cat-img" style="background:linear-gradient(135deg,#FDEEF0,#E07A92)"><span>🌹</span></div><p class="cat-name">Damask Rose</p><p class="cat-origin">Bulgaria</p></div>
+                <div class="cat-item reveal" style="--reveal-delay:0.1s"><div class="cat-img" style="background:linear-gradient(135deg,#FFFBE7,#FFD700)"><span>🍋</span></div><p class="cat-name">Amalfi Lemon</p><p class="cat-origin">Italy</p></div>
+                <div class="cat-item reveal" style="--reveal-delay:0.15s"><div class="cat-img" style="background:linear-gradient(135deg,#D8F0E4,#2E7D52)"><span>🌲</span></div><p class="cat-name">Atlas Cedar</p><p class="cat-origin">Morocco</p></div>
+                <div class="cat-item reveal" style="--reveal-delay:0.2s"><div class="cat-img" style="background:linear-gradient(135deg,#F5E6B8,#C9A84C)"><span>🌾</span></div><p class="cat-name">Vanilla Bean</p><p class="cat-origin">Madagascar</p></div>
+                <div class="cat-item reveal" style="--reveal-delay:0.25s"><div class="cat-img" style="background:linear-gradient(135deg,#EEF0FF,#8A8AE8)"><span>💜</span></div><p class="cat-name">Iris Florentine</p><p class="cat-origin">Florence</p></div>
+                <div class="cat-item reveal" style="--reveal-delay:0.3s"><div class="cat-img" style="background:linear-gradient(135deg,#FFF0E6,#F4A261)"><span>🍊</span></div><p class="cat-name">Neroli Blossom</p><p class="cat-origin">Tunisia</p></div>
+                <div class="cat-item reveal" style="--reveal-delay:0.35s"><div class="cat-img" style="background:linear-gradient(135deg,#F0FFF4,#38A169)"><span>🍃</span></div><p class="cat-name">Vetiver Grass</p><p class="cat-origin">Haiti</p></div>
+                <div class="cat-item reveal" style="--reveal-delay:0.4s"><div class="cat-img" style="background:linear-gradient(135deg,#FDF2FF,#A855F7)"><span>🌸</span></div><p class="cat-name">Jasmine Sambac</p><p class="cat-origin">India</p></div>
+                <div class="cat-item reveal" style="--reveal-delay:0.45s"><div class="cat-img" style="background:linear-gradient(135deg,#FFF8E7,#D97706)"><span>🫚</span></div><p class="cat-name">Amber Resin</p><p class="cat-origin">Oman</p></div>
+            </div>
+        </div>
+        <div class="cat-arrows">
+            <button class="cat-arrow" id="catPrev" aria-label="Previous">&#8592;</button>
+            <button class="cat-arrow" id="catNext" aria-label="Next">&#8594;</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section-pad" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p class="eyebrow">Our Story</p>
+                    <h2 class="section-title">The Art of<br><em>Ancient Perfumery</em></h2>
+                    <p>Born from a passion for rare botanicals and ancient Oriental traditions, Javokhir Attor bridges the timeless world of Eastern fragrance with modern luxury sensibility.</p>
+                    <p>Each fragrance is composed through a process of slow maceration — a patience rewarded with scents of extraordinary depth and lasting presence.</p>
+                    <a href="#collection" class="btn-primary">Discover the Collection</a>
+                </div>
+                <div class="about-stats reveal" style="--reveal-delay:0.2s">
+                    <div class="stat-card"><span class="stat-num">42</span><span class="stat-line"></span><span class="stat-label">Rare Ingredients</span></div>
+                    <div class="stat-card"><span class="stat-num">7</span><span class="stat-line"></span><span class="stat-label">Master Perfumers</span></div>
+                    <div class="stat-card"><span class="stat-num">100%</span><span class="stat-line"></span><span class="stat-label">Natural Extracts</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Section -->
+    <section class="application section-pad" id="application">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="eyebrow">Application Guide</p>
+                <h2 class="section-title">Where to <em>Apply</em></h2>
+                <p class="section-desc">Pulse points amplify fragrance as body heat helps diffuse the perfume throughout your day.</p>
+            </div>
+            <div class="app-grid">
+                <div class="mannequin-wrap reveal">
+                    <svg class="mannequin" viewBox="0 0 220 520" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="110" cy="46" rx="28" ry="34" fill="#EDE0D0" stroke="#D4C4B0" stroke-width="1"/>
+                        <ellipse cx="82" cy="48" rx="6" ry="9" fill="#E8D5C5" stroke="#D4C4B0" stroke-width="0.8"/>
+                        <ellipse cx="138" cy="48" rx="6" ry="9" fill="#E8D5C5" stroke="#D4C4B0" stroke-width="0.8"/>
+                        <path d="M97,78 Q95,88 94,100 L126,100 Q125,88 123,78 Z" fill="#EDE0D0" stroke="#D4C4B0" stroke-width="0.8"/>
+                        <path d="M55,105 Q34,118 30,148 L30,295 Q30,308 42,308 L178,308 Q190,308 190,295 L190,148 Q186,118 165,105 Q140,96 110,94 Q80,96 55,105 Z" fill="#EDE0D0" stroke="#D4C4B0" stroke-width="1"/>
+                        <path d="M53,110 Q30,135 24,178 Q19,212 21,248 Q23,265 30,267 Q37,269 41,258 Q40,230 42,198 Q46,162 56,134 Z" fill="#EDE0D0" stroke="#D4C4B0" stroke-width="0.8"/>
+                        <path d="M167,110 Q190,135 196,178 Q201,212 199,248 Q197,265 190,267 Q183,269 179,258 Q180,230 178,198 Q174,162 164,134 Z" fill="#EDE0D0" stroke="#D4C4B0" stroke-width="0.8"/>
+                        <ellipse cx="27" cy="272" rx="10" ry="15" fill="#EDE0D0" stroke="#D4C4B0" stroke-width="0.8"/>
+                        <ellipse cx="193" cy="272" rx="10" ry="15" fill="#EDE0D0" stroke="#D4C4B0" stroke-width="0.8"/>
+                        <path d="M67,308 Q62,365 60,415 Q58,452 62,470 Q66,484 76,484 Q86,484 88,470 Q89,452 90,415 L93,308 Z" fill="#EDE0D0" stroke="#D4C4B0" stroke-width="0.8"/>
+                        <path d="M153,308 Q158,365 160,415 Q162,452 158,470 Q154,484 144,484 Q134,484 132,470 Q130,452 130,415 L127,308 Z" fill="#EDE0D0" stroke="#D4C4B0" stroke-width="0.8"/>
+                        <ellipse cx="76" cy="396" rx="14" ry="11" fill="#E0D0BE" stroke="#D4C4B0" stroke-width="0.5"/>
+                        <ellipse cx="144" cy="396" rx="14" ry="11" fill="#E0D0BE" stroke="#D4C4B0" stroke-width="0.5"/>
+                        <g class="pulse-group"><circle cx="110" cy="96" r="14" fill="none" stroke="rgba(200,40,40,0.25)" stroke-width="1.5" class="pulse-ring" style="animation-delay:0s"/><circle cx="110" cy="96" r="9" fill="none" stroke="rgba(200,40,40,0.45)" stroke-width="1.5" class="pulse-ring" style="animation-delay:0.4s"/><circle cx="110" cy="96" r="5.5" fill="rgba(210,40,40,0.92)" class="pulse-dot"/></g>
+                        <g class="pulse-group"><circle cx="27" cy="265" r="12" fill="none" stroke="rgba(200,40,40,0.25)" stroke-width="1.5" class="pulse-ring" style="animation-delay:0.3s"/><circle cx="27" cy="265" r="7" fill="none" stroke="rgba(200,40,40,0.45)" stroke-width="1.5" class="pulse-ring" style="animation-delay:0.7s"/><circle cx="27" cy="265" r="4.5" fill="rgba(210,40,40,0.92)" class="pulse-dot"/></g>
+                        <g class="pulse-group"><circle cx="193" cy="265" r="12" fill="none" stroke="rgba(200,40,40,0.25)" stroke-width="1.5" class="pulse-ring" style="animation-delay:0.6s"/><circle cx="193" cy="265" r="7" fill="none" stroke="rgba(200,40,40,0.45)" stroke-width="1.5" class="pulse-ring" style="animation-delay:1s"/><circle cx="193" cy="265" r="4.5" fill="rgba(210,40,40,0.92)" class="pulse-dot"/></g>
+                        <g class="pulse-group"><circle cx="28" cy="212" r="12" fill="none" stroke="rgba(200,40,40,0.25)" stroke-width="1.5" class="pulse-ring" style="animation-delay:0.9s"/><circle cx="28" cy="212" r="7" fill="none" stroke="rgba(200,40,40,0.45)" stroke-width="1.5" class="pulse-ring" style="animation-delay:1.3s"/><circle cx="28" cy="212" r="4.5" fill="rgba(210,40,40,0.92)" class="pulse-dot"/></g>
+                        <g class="pulse-group"><circle cx="192" cy="212" r="12" fill="none" stroke="rgba(200,40,40,0.25)" stroke-width="1.5" class="pulse-ring" style="animation-delay:1.2s"/><circle cx="192" cy="212" r="7" fill="none" stroke="rgba(200,40,40,0.45)" stroke-width="1.5" class="pulse-ring" style="animation-delay:1.6s"/><circle cx="192" cy="212" r="4.5" fill="rgba(210,40,40,0.92)" class="pulse-dot"/></g>
+                        <g class="pulse-group"><circle cx="76" cy="396" r="12" fill="none" stroke="rgba(200,40,40,0.25)" stroke-width="1.5" class="pulse-ring" style="animation-delay:1.5s"/><circle cx="76" cy="396" r="7" fill="none" stroke="rgba(200,40,40,0.45)" stroke-width="1.5" class="pulse-ring" style="animation-delay:1.9s"/><circle cx="76" cy="396" r="4.5" fill="rgba(210,40,40,0.92)" class="pulse-dot"/></g>
+                        <g class="pulse-group"><circle cx="144" cy="396" r="12" fill="none" stroke="rgba(200,40,40,0.25)" stroke-width="1.5" class="pulse-ring" style="animation-delay:1.8s"/><circle cx="144" cy="396" r="7" fill="none" stroke="rgba(200,40,40,0.45)" stroke-width="1.5" class="pulse-ring" style="animation-delay:2.2s"/><circle cx="144" cy="396" r="4.5" fill="rgba(210,40,40,0.92)" class="pulse-dot"/></g>
+                    </svg>
+                </div>
+                <div class="app-info reveal" style="--reveal-delay:0.2s">
+                    <div class="app-point"><div class="app-dot-ind"></div><div><h4>Neck &amp; Décolletage</h4><p>The warmest pulse point — ideal for the very first impression of your scent on others.</p></div></div>
+                    <div class="app-point"><div class="app-dot-ind"></div><div><h4>Inner Wrists</h4><p>A classic placement that projects heart notes gracefully throughout the day.</p></div></div>
+                    <div class="app-point"><div class="app-dot-ind"></div><div><h4>Inner Elbows</h4><p>Soft skin here enables deeper base note absorption and slow, rich diffusion.</p></div></div>
+                    <div class="app-point"><div class="app-dot-ind"></div><div><h4>Behind the Knees</h4><p>Creates a gentle trail that rises with movement, leaving a lasting impression.</p></div></div>
+                    <div class="app-tip"><span class="tip-icon">✦</span><p>Do not rub wrists together — this crushes the top notes and alters the fragrance's natural evolution.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="footer-logo"><span class="logo-main">JAVOKHIR</span><span class="logo-sub">ATTOR</span></div>
+                <p class="footer-tagline">The Art of Ancient Perfumery</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Pinterest">PT</a>
+                    <a href="#" aria-label="Facebook">FB</a>
+                </div>
+            </div>
+            <nav class="footer-nav">
+                <div class="footer-col"><h4>Collection</h4><a href="#">Ombre Dorée</a><a href="#">Rose Éternelle</a><a href="#">Forêt Verte</a><a href="#">Gift Sets</a></div>
+                <div class="footer-col"><h4>Company</h4><a href="#">Our Story</a><a href="#">Ingredients</a><a href="#">Sustainability</a><a href="#">Press</a></div>
+                <div class="footer-col"><h4>Support</h4><a href="#">FAQ</a><a href="#">Shipping</a><a href="#">Returns</a><a href="#">Contact</a></div>
+            </nav>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Javokhir Attor. All rights reserved.</p>
+            <p class="footer-legal"><a href="#">Privacy</a> · <a href="#">Terms</a></p>
+        </div>
+    </footer>
+
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
