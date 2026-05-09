@@ -616,11 +616,6 @@ input,select,textarea{font-family:inherit}
         GitHub Deploy Settings
       </p>
       <div class="gh-fields">
-<div class="gh-actions" style="margin-top: 20px;">
-    <button type="button" class="btn-save-settings" id="saveGhSettingsBtn" style="background: #d4af37; color: #000; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold;">
-        SAVE SETTINGS
-    </button>
-</div>
 <div class="gh-field">
   <label for="ghOwner">GitHub Username</label>
   <input type="text" id="ghOwner" value="AzamatsGithab" autocomplete="off">
@@ -629,6 +624,7 @@ input,select,textarea{font-family:inherit}
   <label for="ghRepo">Repository Name</label>
   <input type="text" id="ghRepo" value="perfume-site" autocomplete="off">
 </div>
+
         <div class="gh-field" style="flex:2;min-width:220px">
           <label for="ghToken">Personal Access Token</label>
           <div class="gh-token-wrap">
@@ -1509,6 +1505,25 @@ async function publishToGitHub() {
 document.getElementById('publishBtn').addEventListener('click', publishToGitHub);
 
 initGhFields();
+
+// Код для сохранения настроек (привязан к кнопке на строке 640)
+const saveButton = document.getElementById('ghSaveBtn');
+if (saveButton) {
+    saveButton.addEventListener('click', () => {
+        const owner = document.getElementById('ghOwner').value.trim();
+        const repo = document.getElementById('ghRepo').value.trim();
+        const token = document.getElementById('ghToken').value.trim();
+
+        if (!owner || !repo || !token) {
+            alert('Заполни все три поля!');
+            return;
+        }
+
+        localStorage.setItem('ghSettings', JSON.stringify({ owner, repo, token }));
+        alert('Настройки успешно сохранены!');
+        location.reload(); // Это обновит страницу и активирует Publish
+    });
+}
 </script>
 </body>
 </html>
