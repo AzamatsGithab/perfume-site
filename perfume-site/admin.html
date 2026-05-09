@@ -852,7 +852,7 @@ async function loadProducts() {
   // Если настройки GitHub заполнены, пробуем скачать данные оттуда
   if (s.token && s.owner && s.repo) {
     try {
-      const apiUrl = `https://api.github.com/repos/${s.owner}/${s.repo}/contents/products.js`;
+      const apiUrl = `https://api.github.com/repos/AzamatsGithab/perfume-site/contents/products.js`;
       const res = await fetch(apiUrl, {
         headers: { 'Authorization': `token ${s.token}`, 'Cache-Control': 'no-cache' }
       });
@@ -1477,7 +1477,7 @@ async function publishToGitHub() {
     if (/bad credentials|401/i.test(msg))
       msg = 'Token is invalid or expired — update it in ⚙ GitHub settings';
     else if (/not found|404/i.test(msg))
-      msg = 'Repository not found — check username and repo name in ⚙ GitHub settings';
+      msg = 'Repository not found — check username and rep  o name in ⚙ GitHub settings';
     toast('Publish failed: ' + msg, 'error', 6000);
   } finally {
     btn.disabled    = false;
