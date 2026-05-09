@@ -63,48 +63,15 @@ var PRODUCTS_DATA = [
     "id": "1778149628743"
   },
   {
-    "name": "TEST1",
+    "id": "1",
+    "name": "Ombre Dorée",
     "brand": "Javokhir Attor",
     "category": "oriental",
-    "theme": "gold",
     "price": "185",
     "volume": "50",
-    "notes": "amber old",
-    "description": "describe",
-    "image": null,
-    "heroBackground": "#130b00",
-    "heroGlowColor": "#c9a84c",
-    "ingredients": [],
-    "id": "1778331596974"
-  },
-  {
-    "name": "TEST2",
-    "brand": "Javokhir Attor",
-    "category": "aquatic",
+    "description": "A warm, opulent oriental built on golden amber and rare oud. Sandalwood and vanilla weave a silky base that lingers for hours.",
+    "notes": "Amber, Oud, Sandalwood, Vanilla, Musk",
     "theme": "gold",
-    "price": "1",
-    "volume": "50",
-    "notes": "oud vanila",
-    "description": "describe",
-    "image": null,
-    "heroBackground": "#bc7b20",
-    "heroGlowColor": "#c9a84c",
-    "ingredients": [],
-    "id": "1778331672488"
-  },
-  {
-    "name": "rest3",
-    "brand": "Javokhir Attor",
-    "category": "chypre",
-    "theme": "gold",
-    "price": "1",
-    "volume": "50",
-    "notes": "111",
-    "description": "11",
-    "image": null,
-    "heroBackground": "#130b00",
-    "heroGlowColor": "#c9a84c",
-    "ingredients": [],
-    "id": "1778334926565"
+    "image": null
   }
 ];
