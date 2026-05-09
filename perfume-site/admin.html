@@ -616,14 +616,14 @@ input,select,textarea{font-family:inherit}
         GitHub Deploy Settings
       </p>
       <div class="gh-fields">
-        <div class="gh-field">
-          <label for="ghOwner">GitHub Username</label>
-          <input type="text" id="ghOwner" placeholder="your-username" autocomplete="off">
-        </div>
-        <div class="gh-field">
-          <label for="ghRepo">Repository Name</label>
-          <input type="text" id="ghRepo" placeholder="your-repo-name" autocomplete="off">
-        </div>
+<div class="gh-field">
+  <label for="ghOwner">GitHub Username</label>
+  <input type="text" id="ghOwner" value="AzamatsGithab" autocomplete="off">
+</div>
+<div class="gh-field">
+  <label for="ghRepo">Repository Name</label>
+  <input type="text" id="ghRepo" value="perfume-site" autocomplete="off">
+</div>
         <div class="gh-field" style="flex:2;min-width:220px">
           <label for="ghToken">Personal Access Token</label>
           <div class="gh-token-wrap">
@@ -841,15 +841,51 @@ function tryAuth() {
     sessionStorage.setItem('ja_admin', '1');
     overlay.style.display = 'none';
     mainEl.style.display  = 'flex';
-    loadProducts(); {
-  const saved = localStorage.getItem('products');
-  if (saved) {
-    products = JSON.parse(saved);
-  } else {
-    products = []; // или начальный список
+//---------------------------------------------------------------------------------------------------------------------------------//
+//---------------------------------------------------------------------------------------------------------------------------------//
+//---------------------------------------------------------------------------------------------------------------------------------//
+//---------------------------------------------------------------------------------------------------------------------------------//
+//---------------------------------------------------------------------------------------------------------------------------------//
+async function loadProducts() {
+  const s = getSettings();
+  
+  // Если настройки GitHub заполнены, пробуем скачать данные оттуда
+  if (s.token && s.owner && s.repo) {
+    try {
+      const apiUrl = `https://api.github.com/repos/${s.owner}/${s.repo}/contents/products.js`;
+      const res = await fetch(apiUrl, {
+        headers: { 'Authorization': `token ${s.token}`, 'Cache-Control': 'no-cache' }
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        const content = decodeURIComponent(escape(atob(data.content))); // Декодируем UTF-8
+        
+        // Извлекаем JSON из строки "const products = [...];"
+        const jsonStr = content.replace(/const\s+products\s*=\s*/, '').replace(/;$/, '').trim();
+        products = JSON.parse(jsonStr);
+        
+        // Сохраняем в локалку как резерв
+        localStorage.setItem('products', JSON.stringify(products));
+        renderTable();
+        console.log("Данные успешно синхронизированы с GitHub");
+        return;
+      }
+    } catch (e) {
+      console.error("Ошибка синхронизации с GitHub, загружаю локальную копию:", e);
+    }
   }
+
+  // Если GitHub не доступен, работаем по-старому
+  const saved = localStorage.getItem('products');
+  products = saved ? JSON.parse(saved) : [];
   renderTable();
 }
+//---------------------------------------------------------------------------------------------------------------------------------//
+//---------------------------------------------------------------------------------------------------------------------------------//
+//---------------------------------------------------------------------------------------------------------------------------------//
+//---------------------------------------------------------------------------------------------------------------------------------//
+//---------------------------------------------------------------------------------------------------------------------------------//
   } else {
     authErr.classList.add('show');
     pwdInput.value = '';
