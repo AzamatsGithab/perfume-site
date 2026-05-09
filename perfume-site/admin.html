@@ -456,6 +456,82 @@ input,select,textarea{font-family:inherit}
 }
 #savedBadge.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
+/* ── GITHUB DEPLOY SECTION ──────────────────────────────────── */
+.gh-section{
+  background:linear-gradient(90deg,#0D1117 0%,#161B22 100%);
+  border-bottom:1px solid rgba(201,168,76,0.15);
+  padding:0 48px;
+  overflow:hidden;
+  max-height:0;
+  transition:max-height .45s cubic-bezier(.4,0,.2,1);
+}
+.gh-section.open{max-height:420px}
+.gh-section-inner{padding:20px 0 24px}
+.gh-section-title{
+  font-size:10px;font-weight:400;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:8px;
+}
+.gh-fields{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end}
+.gh-field{display:flex;flex-direction:column;gap:6px;flex:1;min-width:160px}
+.gh-field label{
+  font-size:9px;font-weight:400;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,0.5);
+}
+.gh-field input{
+  padding:10px 12px;background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.12);color:#fff;
+  font-size:12px;font-weight:300;letter-spacing:.3px;
+  outline:none;transition:border-color var(--tr);font-family:inherit;
+}
+.gh-field input:focus{border-color:rgba(201,168,76,0.5)}
+.gh-field input::placeholder{color:rgba(255,255,255,0.22)}
+.gh-token-wrap{position:relative}
+.gh-token-wrap input{padding-right:40px}
+.gh-token-toggle{
+  position:absolute;right:10px;top:50%;transform:translateY(-50%);
+  background:none;border:none;cursor:pointer;
+  color:rgba(255,255,255,0.35);font-size:12px;padding:2px;
+  transition:color var(--tr);line-height:1;
+}
+.gh-token-toggle:hover{color:rgba(255,255,255,0.7)}
+.btn-gh-save{
+  padding:10px 22px;background:rgba(201,168,76,0.12);
+  border:1px solid rgba(201,168,76,0.3);
+  color:var(--gold);font-size:9.5px;font-weight:400;
+  letter-spacing:2px;text-transform:uppercase;
+  transition:all var(--tr);white-space:nowrap;align-self:flex-end;
+}
+.btn-gh-save:hover{background:rgba(201,168,76,0.22);border-color:var(--gold)}
+.gh-instructions{
+  margin-top:14px;padding:11px 16px;
+  background:rgba(255,255,255,0.035);border-left:2px solid rgba(201,168,76,0.28);
+}
+.gh-instructions p{
+  font-size:11px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.75;
+}
+.gh-instructions a{color:var(--gold-lt);text-decoration:underline;text-decoration-color:rgba(201,168,76,0.35)}
+.gh-instructions a:hover{color:var(--gold)}
+.gh-instructions code{
+  font-family:monospace;font-size:10.5px;background:rgba(201,168,76,0.12);
+  color:var(--gold-lt);padding:1px 5px;
+}
+
+/* ── PUBLISH BUTTON (nav) ───────────────────────────────────── */
+.btn-publish{
+  font-size:9.5px;font-weight:400;letter-spacing:2px;text-transform:uppercase;
+  color:var(--gold);border:1px solid rgba(201,168,76,0.45);
+  padding:8px 20px;transition:all var(--tr);
+}
+.btn-publish:hover{background:rgba(201,168,76,0.12);border-color:var(--gold)}
+.btn-publish:disabled{opacity:.55;pointer-events:none}
+.btn-gh-toggle{
+  font-size:9.5px;font-weight:400;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,0.38);border:1px solid rgba(255,255,255,0.12);
+  padding:8px 16px;transition:all var(--tr);
+}
+.btn-gh-toggle:hover{color:rgba(255,255,255,0.65);border-color:rgba(255,255,255,0.28)}
+.btn-gh-toggle.active{color:var(--gold);border-color:rgba(201,168,76,0.4)}
+
 /* ── RESPONSIVE ─────────────────────────────────────────────── */
 @media(max-width:1100px){
   .admin-body{grid-template-columns:1fr;padding:28px 28px 60px}
@@ -526,9 +602,47 @@ input,select,textarea{font-family:inherit}
     </div>
     <div class="nav-right">
       <a href="index.html" class="btn-view-site">View Site ↗</a>
+      <button class="btn-publish" id="publishBtn">↑ Publish to Site</button>
+      <button class="btn-gh-toggle" id="ghToggle">⚙ GitHub</button>
       <button class="btn-logout" id="logoutBtn">Logout</button>
     </div>
   </nav>
+
+  <!-- GitHub Deploy Settings -->
+  <div class="gh-section" id="ghSection">
+    <div class="gh-section-inner">
+      <p class="gh-section-title">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.744 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z" fill="currentColor" style="color:var(--gold)"/></svg>
+        GitHub Deploy Settings
+      </p>
+      <div class="gh-fields">
+        <div class="gh-field">
+          <label for="ghOwner">GitHub Username</label>
+          <input type="text" id="ghOwner" placeholder="your-username" autocomplete="off">
+        </div>
+        <div class="gh-field">
+          <label for="ghRepo">Repository Name</label>
+          <input type="text" id="ghRepo" placeholder="your-repo-name" autocomplete="off">
+        </div>
+        <div class="gh-field" style="flex:2;min-width:220px">
+          <label for="ghToken">Personal Access Token</label>
+          <div class="gh-token-wrap">
+            <input type="password" id="ghToken" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off">
+            <button type="button" class="gh-token-toggle" id="ghTokenToggle" title="Show / hide token">👁</button>
+          </div>
+        </div>
+        <button class="btn-gh-save" id="ghSaveBtn">Save Settings</button>
+      </div>
+      <div class="gh-instructions">
+        <p>
+          <strong style="color:rgba(255,255,255,0.7)">How to create a Personal Access Token:</strong>
+          Go to <a href="https://github.com/settings/tokens" target="_blank" rel="noopener noreferrer">github.com/settings/tokens</a>
+          → <em>Generate new token (classic)</em> → tick the <code>repo</code> scope → click Generate → copy and paste above.
+          Your token is stored only in this browser's localStorage and is sent exclusively to the GitHub API.
+        </p>
+      </div>
+    </div>
+  </div>
 
   <!-- Instruction banner -->
   <div class="workflow-banner">
@@ -727,7 +841,15 @@ function tryAuth() {
     sessionStorage.setItem('ja_admin', '1');
     overlay.style.display = 'none';
     mainEl.style.display  = 'flex';
-    loadProducts();
+    loadProducts(); {
+  const saved = localStorage.getItem('products');
+  if (saved) {
+    products = JSON.parse(saved);
+  } else {
+    products = []; // или начальный список
+  }
+  renderTable();
+}
   } else {
     authErr.classList.add('show');
     pwdInput.value = '';
@@ -1213,6 +1335,123 @@ window.delCard  = (id, name) => deleteProduct(id, name);
 /* ── INIT ──────────────────────────────────────────────────── */
 buildIngSlots();
 if (sessionStorage.getItem('ja_admin')) loadProducts();
+
+/* ── GITHUB DEPLOY ──────────────────────────────────────────── */
+const GH_KEY    = 'javokhir_gh_settings';
+const ghSection = document.getElementById('ghSection');
+const ghToggle  = document.getElementById('ghToggle');
+
+function loadGhSettings() {
+  try { return JSON.parse(localStorage.getItem(GH_KEY)) || {}; } catch { return {}; }
+}
+
+function initGhFields() {
+  const s = loadGhSettings();
+  if (s.owner) document.getElementById('ghOwner').value = s.owner;
+  if (s.repo)  document.getElementById('ghRepo').value  = s.repo;
+  if (s.token) document.getElementById('ghToken').value = s.token;
+}
+
+document.getElementById('ghSaveBtn').addEventListener('click', () => {
+  const s = {
+    owner: document.getElementById('ghOwner').value.trim(),
+    repo:  document.getElementById('ghRepo').value.trim(),
+    token: document.getElementById('ghToken').value.trim(),
+  };
+  localStorage.setItem(GH_KEY, JSON.stringify(s));
+  toast('GitHub settings saved', 'success');
+});
+
+ghToggle.addEventListener('click', () => {
+  const open = ghSection.classList.toggle('open');
+  ghToggle.classList.toggle('active', open);
+});
+
+document.getElementById('ghTokenToggle').addEventListener('click', function () {
+  const inp = document.getElementById('ghToken');
+  if (inp.type === 'password') { inp.type = 'text';     this.textContent = '🙈'; }
+  else                         { inp.type = 'password'; this.textContent = '👁'; }
+});
+
+function buildProductsJs() {
+  return '/* Auto-generated by admin.html — do not edit manually */\n' +
+         'var PRODUCTS_DATA = ' + JSON.stringify(products, null, 2) + ';\n';
+}
+
+function toBase64Utf8(str) {
+  return btoa(unescape(encodeURIComponent(str)));
+}
+
+async function publishToGitHub() {
+  const s = loadGhSettings();
+  if (!s.owner || !s.repo || !s.token) {
+    toast('Configure GitHub settings first — click ⚙ GitHub in the nav', 'error', 4000);
+    ghSection.classList.add('open');
+    ghToggle.classList.add('active');
+    return;
+  }
+
+  const btn = document.getElementById('publishBtn');
+  btn.disabled    = true;
+  btn.textContent = '↑ Publishing…';
+
+  const apiUrl = `https://api.github.com/repos/${s.owner}/${s.repo}/contents/products.js`;
+  const headers = {
+    'Authorization':        `Bearer ${s.token}`,
+    'Accept':               'application/vnd.github+json',
+    'X-GitHub-Api-Version': '2022-11-28',
+    'Content-Type':         'application/json',
+  };
+
+  try {
+    /* Get current file SHA so GitHub lets us update (not just create) */
+    let sha = null;
+    const getRes = await fetch(apiUrl, { headers });
+    if (getRes.ok) {
+      sha = (await getRes.json()).sha;
+    } else if (getRes.status !== 404) {
+      const errData = await getRes.json().catch(() => ({}));
+      throw new Error(errData.message || `GitHub API error ${getRes.status}`);
+    }
+
+    /* PUT the new file content */
+    const body = {
+      message: 'Update products via admin panel',
+      content: toBase64Utf8(buildProductsJs()),
+    };
+    if (sha) body.sha = sha;
+
+    const putRes  = await fetch(apiUrl, { method: 'PUT', headers, body: JSON.stringify(body) });
+    const putData = await putRes.json().catch(() => ({}));
+    if (!putRes.ok) throw new Error(putData.message || `GitHub API error ${putRes.status}`);
+
+    /* Success toast with clickable link */
+    const siteUrl = `https://${s.owner}.github.io/${s.repo}/`;
+    const t = document.createElement('div');
+    t.className = 'toast-item success';
+    t.innerHTML = `✓ Published! <a href="${siteUrl}" target="_blank" rel="noopener noreferrer"
+      style="color:#fff;text-decoration:underline;margin-left:8px">View live site ↗</a>`;
+    t.style.pointerEvents = 'auto';
+    toastEl.appendChild(t);
+    requestAnimationFrame(() => requestAnimationFrame(() => t.classList.add('show')));
+    setTimeout(() => { t.classList.remove('show'); setTimeout(() => t.remove(), 400); }, 7000);
+
+  } catch (err) {
+    let msg = err.message || 'Unknown error';
+    if (/bad credentials|401/i.test(msg))
+      msg = 'Token is invalid or expired — update it in ⚙ GitHub settings';
+    else if (/not found|404/i.test(msg))
+      msg = 'Repository not found — check username and repo name in ⚙ GitHub settings';
+    toast('Publish failed: ' + msg, 'error', 6000);
+  } finally {
+    btn.disabled    = false;
+    btn.textContent = '↑ Publish to Site';
+  }
+}
+
+document.getElementById('publishBtn').addEventListener('click', publishToGitHub);
+
+initGhFields();
 </script>
 </body>
 </html>
