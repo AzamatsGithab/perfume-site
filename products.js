@@ -91,5 +91,20 @@ var PRODUCTS_DATA = [
     "heroGlowColor": "#c9a84c",
     "ingredients": [],
     "id": "1778331672488"
+  },
+  {
+    "name": "rest3",
+    "brand": "Javokhir Attor",
+    "category": "chypre",
+    "theme": "gold",
+    "price": "1",
+    "volume": "50",
+    "notes": "111",
+    "description": "11",
+    "image": null,
+    "heroBackground": "#130b00",
+    "heroGlowColor": "#c9a84c",
+    "ingredients": [],
+    "id": "1778334926565"
   }
 ];
