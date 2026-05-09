@@ -616,6 +616,11 @@ input,select,textarea{font-family:inherit}
         GitHub Deploy Settings
       </p>
       <div class="gh-fields">
+<div class="gh-actions" style="margin-top: 20px;">
+    <button type="button" class="btn-save-settings" id="saveGhSettingsBtn" style="background: #d4af37; color: #000; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold;">
+        SAVE SETTINGS
+    </button>
+</div>
 <div class="gh-field">
   <label for="ghOwner">GitHub Username</label>
   <input type="text" id="ghOwner" value="AzamatsGithab" autocomplete="off">
@@ -820,6 +825,22 @@ input,select,textarea{font-family:inherit}
 </div><!-- /adminMain -->
 
 <script>
+  document.getElementById('saveGhSettingsBtn').addEventListener('click', () => {
+    const settings = {
+        owner: document.getElementById('ghOwner').value.trim(),
+        repo: document.getElementById('ghRepo').value.trim(),
+        token: document.getElementById('ghToken').value.trim()
+    };
+    
+    if (!settings.owner || !settings.repo || !settings.token) {
+        alert('Пожалуйста, заполни все поля!');
+        return;
+    }
+
+    localStorage.setItem('ghSettings', JSON.stringify(settings));
+    alert('Настройки GitHub сохранены!');
+    location.reload(); // Перезагрузит страницу, чтобы всё применилось
+});
 /* ── CONSTANTS ─────────────────────────────────────────────── */
 const PASSWORD = 'admin123';
 const LS_KEY   = 'javokhir_products';
