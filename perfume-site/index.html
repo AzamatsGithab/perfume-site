@@ -248,7 +248,14 @@
         </div>
     </footer>
 
-    <script src="products.js"></script>
+    <script>
+    // Автоматическая загрузка products.js с защитой от кеша
+    (function() {
+        var script = document.createElement('script');
+        script.src = 'products.js?v=' + Date.now(); // Добавляет текущее время как версию
+        document.head.appendChild(script);
+    })();
+</script>
     <script src="script.js"></script>
 </body>
 </html>
