@@ -60,5 +60,17 @@
     "heroBackground": "#130b00",
     "heroGlowColor": "#564691",
     "id": "1778149628743"
+  },
+   {
+    "id": "1",
+    "name": "Ombre Dorée",
+    "brand": "Javokhir Attor",
+    "category": "oriental",
+    "price": "185",
+    "volume": "50",
+    "description": "A warm, opulent oriental built on golden amber and rare oud. Sandalwood and vanilla weave a silky base that lingers for hours.",
+    "notes": "Amber, Oud, Sandalwood, Vanilla, Musk",
+    "theme": "gold",
+    "image": null
   }
 ]
